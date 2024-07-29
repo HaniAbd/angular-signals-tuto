@@ -4,11 +4,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CounterComponent } from './components/counter/counter.component';
 import { ButtonModule } from 'primeng/button';
+import { WatcherComponent } from './components/watcher/watcher.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CounterComponent
+    CounterComponent,
+    WatcherComponent
   ],
   imports: [
     BrowserModule,

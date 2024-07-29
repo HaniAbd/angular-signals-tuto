@@ -1,4 +1,4 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, signal, effect } from '@angular/core';
 
 @Component({
   selector: 'app-counter',
@@ -7,7 +7,11 @@ import { Component, OnInit, signal } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
   count = signal(0);
-  constructor() { }
+  constructor() {
+    effect(() => {
+      console.log(`The current count is: ${this.count()}`);
+    });
+  }
 
   ngOnInit() {
   }
