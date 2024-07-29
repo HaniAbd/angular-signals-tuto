@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { CounterComponent } from './components/counter/counter.component';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -10,7 +11,8 @@ import { CounterComponent } from './components/counter/counter.component';
     CounterComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

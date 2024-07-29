@@ -5,12 +5,16 @@
     </div>
     <div class="flex align-items-center justify-content-center w-24rem h-4rem m-2">
       <div class="flex justify-content-between flex-wrap">
-        <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2">-</div>
-        <div class="flex align-items-center justify-content-center w-4rem h-4rem bg-primary font-bold border-round m-2">+</div>
+        <div class="flex align-items-center justify-content-center w-4rem h-4rem m-2 cursor-pointer">
+          <p-button icon="pi pi-minus-circle" (onClick)="decreaseCount()"/>
+        </div>
+        <div class="flex align-items-center justify-content-center w-4rem h-4rem m-2 cursor-pointer">
+          <p-button icon="pi pi-plus-circle" severity="danger" (onClick)="increaseCount()"/>
+        </div>
       </div>
     </div>
     <div class="flex align-items-center justify-content-center w-24rem h-4rem bg-primary font-bold border-round m-2">
-      <span>Current Value : </span>
+      <span>Current Value : {{count()}}</span>
     </div>
   </div>
 </div>
