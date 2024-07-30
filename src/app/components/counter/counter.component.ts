@@ -1,4 +1,5 @@
-import { Component, OnInit, signal, effect } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SignalsService } from '../../services/signals/signals.service';
 
 @Component({
   selector: 'app-counter',
@@ -6,21 +7,16 @@ import { Component, OnInit, signal, effect } from '@angular/core';
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
-  count = signal(0);
-  constructor() {
-    effect(() => {
-      console.log(`The current count is: ${this.count()}`);
-    });
-  }
+  count = this.signalsService.count;
+  constructor(private signalsService: SignalsService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   decreaseCount() {
-    this.count.set(this.count() - 1);
+    this.signalsService.decrementCount();
   }
 
   increaseCount() {
-    this.count.set(this.count() + 1);
+    this.signalsService.incrementCount();
   }
 }

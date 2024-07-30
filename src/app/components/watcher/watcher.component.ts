@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SignalsService } from '../../services/signals/signals.service';
 
 @Component({
   selector: 'app-watcher',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./watcher.component.css']
 })
 export class WatcherComponent {
+  count = this.signalsService.count;
+
+  constructor(private signalsService: SignalsService) {
+  }
 
 }
