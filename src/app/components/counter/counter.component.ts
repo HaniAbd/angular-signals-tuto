@@ -1,13 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Signal } from '@angular/core';
 import { SignalsService } from '../../services/signals/signals.service';
+import { ButtonModule } from 'primeng/button';
+import { WatcherComponent } from '../watcher/watcher.component';
 
 @Component({
   selector: 'app-counter',
   templateUrl: './counter.component.html',
+  standalone: true,
+  imports: [ButtonModule, WatcherComponent],
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {
-  count = this.signalsService.count;
+  count: Signal<number> = this.signalsService.count;
   constructor(private signalsService: SignalsService) {}
 
   ngOnInit() {}
