@@ -4,9 +4,11 @@ Angular Signals Showcase is a dynamic and informative web application designed t
 
 ## Features
 
-- Interactive examples
-- Detailed explanations
-- Real-world use cases
+- Angular 16
+- PrimeNG for rich UI components
+- PrimeFlex for flexible and responsive layouts
+- Angular Signals for reactive state management
+- Standalone components for modularity and simplicity
 
 ## Getting Started
 
