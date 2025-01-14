@@ -7,7 +7,7 @@ import { WatcherComponent } from '../watcher/watcher.component';
   selector: 'app-counter',
   templateUrl: './counter.component.html',
   standalone: true,
-  imports: [ButtonModule, WatcherComponent],
+  imports: [ButtonModule],
   styleUrls: ['./counter.component.css']
 })
 export class CounterComponent implements OnInit {

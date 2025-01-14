@@ -1,12 +1,63 @@
-<div class="flex justify-content-center flex-wrap mt-5 p-1 border-round bg-gray-500">
-  <div class="flex align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2">
+<div
+  class="flex justify-content-center flex-wrap mt-5 p-1 border-round bg-gray-500"
+>
+  <div
+    class="flex align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
+  >
     <span class="text-cyan-50 font-bold">Watcher Component</span>
-    <span class="text-cyan-50 font-bold">Counter Value : {{count()}}</span>
+    <span class="text-cyan-50 font-bold">Counter Value : {{ count() }}</span>
   </div>
-  <div class="flex align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2">
-    <span>Other Component</span>
+  <div
+    class="flex flex-column align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
+  >
+    <span
+      >computed: Creates a derived signal that depends on one or more other
+      signals. It recalculates its value whenever the dependencies change.</span
+    >
+    <span
+      >effect: Executes a side effect (e.g., logging, API call, DOM updates)
+      whenever the signals it depends on change.</span
+    >
   </div>
-  <div class="flex align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2">
-    <span>Other Component</span>
+  <div
+    class="flex align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
+  >
+    <div class="flex align-items-center justify-content-center w-screen h-fit">
+      <div class="flex flex-column">
+        <div class="flex align-items-center justify-content-center m-2">
+          <small
+            >You want to calculate a total price dynamically based on quantity
+            and price per item. If the total price exceeds a certain threshold,
+            you log a warning.</small
+          >
+        </div>
+        <div
+          class="flex align-items-center justify-content-center w-24rem h-4rem m-2"
+        >
+          <div class="flex justify-content-between flex-wrap">
+            <div
+              class="flex align-items-center justify-content-center w-4rem h-4rem m-2 cursor-pointer"
+            >
+              <p-button icon="pi pi-minus-circle" (onClick)="decreaseQty()" />
+            </div>
+            <div
+              class="flex align-items-center justify-content-center w-4rem h-4rem m-2 cursor-pointer"
+            >
+              <p-button
+                icon="pi pi-plus-circle"
+                severity="danger"
+                (onClick)="increaseQty()"
+              />
+            </div>
+          </div>
+        </div>
+        <div
+          class="flex align-items-center justify-content-center w-24rem h-4rem bg-primary font-bold border-round m-2"
+        >
+          <span>Total Price : {{ totalPrice() }}</span>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+<p-toast />
