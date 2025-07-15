@@ -1,16 +1,30 @@
-import { TestBed } from '@angular/core/testing';
+import { SignalsService } from "./signals.service";
 
-import { SignalsService } from './signals.service';
-
-describe('SignalsService', () => {
+describe("SignalsService", () => {
   let service: SignalsService;
 
   beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(SignalsService);
+    service = new SignalsService();
   });
 
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it("should initialize count to 0", () => {
+    expect(service.count()).toBe(0);
+  });
+
+  it("should increment count", () => {
+    service.incrementCount();
+    expect(service.count()).toBe(1);
+  });
+
+  it("should decrement count", () => {
+    service.decrementCount();
+    expect(service.count()).toBe(-1);
+  });
+
+  it("should increment and decrement correctly", () => {
+    service.incrementCount(); // 1
+    service.incrementCount(); // 2
+    service.decrementCount(); // 1
+    expect(service.count()).toBe(1);
   });
 });
