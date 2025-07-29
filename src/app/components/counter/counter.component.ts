@@ -22,11 +22,25 @@ export class CounterComponent implements OnInit {
 
   increaseCount() {
     this.store.dispatch({ type: "[Counter] Increment Count" });
+    this.store.dispatch({ type: "[Counter] Increment Count" });
     this.signalsService.incrementCount();
   }
 
   decreaseCount() {
     this.store.dispatch({ type: "[Counter] Decrement Count" });
     this.signalsService.decrementCount();
+  }
+
+  submitData() {
+    this.store.dispatch({
+      type: "[dynamicData] Dynamic Data",
+      props: {
+        data: {
+          id: 1,
+          name: "Submit",
+          description: "Submitting data",
+        },
+      },
+    });
   }
 }

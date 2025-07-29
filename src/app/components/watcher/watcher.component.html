@@ -11,7 +11,10 @@
   </div>
   <div
     class="flex flex-column align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
-  ></div>
+  >
+    <span>Dynamic Data:</span>
+    <span>{{ data$ | async | json }}</span>
+  </div>
   <div
     class="flex align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
   >
