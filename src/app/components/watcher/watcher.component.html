@@ -2,23 +2,16 @@
   class="flex justify-content-center flex-wrap mt-5 p-1 border-round bg-gray-500"
 >
   <div
-    class="flex align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
+    class="flex flex-column align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
   >
-    <span class="text-cyan-50 font-bold">Watcher Component</span>
-    <span class="text-cyan-50 font-bold">Counter Value : {{ count() }}</span>
+    <span class="text-cyan-50 font-bold">NgRx Store</span>
+    <span class="text-cyan-50 font-bold"
+      >Counter Value : {{ count$ | async }}</span
+    >
   </div>
   <div
     class="flex flex-column align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
-  >
-    <span
-      >computed: Creates a derived signal that depends on one or more other
-      signals. It recalculates its value whenever the dependencies change.</span
-    >
-    <span
-      >effect: Executes a side effect (e.g., logging, API call, DOM updates)
-      whenever the signals it depends on change.</span
-    >
-  </div>
+  ></div>
   <div
     class="flex align-items-center justify-content-center w-24rem h-24rem bg-green-300 hover:bg-green-500 font-bold border-round m-2"
   >

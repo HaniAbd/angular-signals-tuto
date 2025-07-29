@@ -12,12 +12,12 @@ describe("WatcherComponent", () => {
     count: signal(0),
   };
 
-  beforeEach(() => {
-    component = new WatcherComponent(
-      mockSignalsService as any,
-      mockMessageService as any
-    );
-  });
+  // beforeEach(() => {
+  //   component = new WatcherComponent(
+  //     mockSignalsService as any,
+  //     mockMessageService as any
+  //   );
+  // });
 
   it("should initialize with default quantity and pricePerItem", () => {
     expect(component.quantity()).toBe(1);

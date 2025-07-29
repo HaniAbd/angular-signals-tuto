@@ -1,7 +1,10 @@
+import { AsyncPipe } from "@angular/common";
 import { Component, computed, effect, signal, Signal } from "@angular/core";
+import { Store } from "@ngrx/store";
 import { MessageService } from "primeng/api";
 import { ButtonModule } from "primeng/button";
 import { ToastModule } from "primeng/toast";
+import { Observable } from "rxjs";
 import { SignalsService } from "../../services/signals/signals.service";
 
 @Component({
@@ -9,7 +12,7 @@ import { SignalsService } from "../../services/signals/signals.service";
   templateUrl: "./watcher.component.html",
   standalone: true,
   styleUrls: ["./watcher.component.css"],
-  imports: [ButtonModule, ToastModule],
+  imports: [ButtonModule, ToastModule, AsyncPipe],
   providers: [MessageService],
 })
 export class WatcherComponent {
@@ -17,12 +20,15 @@ export class WatcherComponent {
   quantity = signal(1);
   pricePerItem = signal(10);
 
+  count$: Observable<number>;
+
   // Define computed signals
   totalPrice = computed(() => this.quantity() * this.pricePerItem());
 
   constructor(
     private signalsService: SignalsService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private store: Store<{ counter: number }>
   ) {
     effect(() => {
       const total = this.totalPrice();
@@ -40,6 +46,8 @@ export class WatcherComponent {
         });
       }
     });
+
+    this.count$ = this.store.select("counter");
   }
   decreaseQty() {
     this.quantity.set(this.quantity() - 1);
